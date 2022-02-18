@@ -1,6 +1,7 @@
 var router = require("express").Router();
 
 router.get("/", function (req, res) {
+  console.log(":rocket:");
   res.send("Here are your stock yardages: 300 yards");
 });
 
