@@ -11,8 +11,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint ./",
     "dockerbuild": ""
-},
-  "type": "module",
+},  
   "author": "Yiqi Zhang",
   "license": "ISC",
   "dependencies": {
