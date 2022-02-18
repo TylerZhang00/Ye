@@ -2,16 +2,12 @@
   "name": "naborlygolfserver",
   "version": "1.0.0",
   "description": "Server operational.",
-  "main": "app.js",
+  "main": "server.js",
   "scripts": {
-    "start": "node --unhandled-rejections=strict dist/server.js",
-    "postinstall": "tsc",
-    "server": "nodemon server.js",
-    "dev": "npm run server",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "eslint ./",
-    "dockerbuild": ""
-},  
+    "start": "node server.js",
+    "server": "nodemon server",
+    "dev": "npm run server"
+  },
   "author": "Yiqi Zhang",
   "license": "ISC",
   "dependencies": {
