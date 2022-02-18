@@ -13,5 +13,4 @@ app.use(express.json({ limit: "50mb" }));
 app.get("/", (req, res) => res.send("Hello Golfers!"));
 
 // Start the server on port 3000
-app.listen(port, "127.0.0.1");
-console.log("Hello Golfers, welcome to port 3100:");
+app.listen(port, () => console.log(`Hello Golfers, welcome to port: ${port}`));
