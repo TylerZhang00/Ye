@@ -1,18 +1,22 @@
 {
-    "name": "naborlygolfserver",
-    "version": "1.0.0",
-    "description": "Server operational.",
-    "main": "app.js",
-    "scripts": {
-      "start": "node --unhandled-rejections=strict dist/server.js",
-      "postinstall": "tsc",
-      "server": "nodemon server.js",
-      "dev": "npm run server",
-      "test": "echo \"Error: no test specified\" && exit 1",
-      "lint": "eslint ./",
-      "dockerbuild": ""
-    },
-    "author": "Yiqi Zhang",
-    "license": "ISC"
+  "name": "naborlygolfserver",
+  "version": "1.0.0",
+  "description": "Server operational.",
+  "main": "app.js",
+  "scripts": {
+    "start": "node --unhandled-rejections=strict dist/server.js",
+    "postinstall": "tsc",
+    "server": "nodemon server.js",
+    "dev": "npm run server",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint ./",
+    "dockerbuild": ""
+},
+  "type": "module",
+  "author": "Yiqi Zhang",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3"
   }
-  
+}

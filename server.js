@@ -1,16 +1,17 @@
-// app.js
+import dotenv from "dotenv";
+dotenv.config();
+import express from "express";
 
-const http = require("http");
+const app = express();
+const port = process.env.port || 3100;
 
-// Create an instance of the http server to handle HTTP requests
-let app = http.createServer((req, res) => {
-  // Set a response type of plain text for the response
-  res.writeHead(200, { "Content-Type": "text/plain" });
+// Init middleware
+app.set("trust proxy", true);
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json({ limit: "50mb" }));
 
-  // Send back a response and end the connection
-  res.end("Hello Golfers!\n");
-});
+app.get("/", (req, res) => res.send("Hello Golfers!"));
 
 // Start the server on port 3000
-app.listen(3100, "127.0.0.1");
-console.log("Node server running on port 3100");
+app.listen(port, "127.0.0.1");
+console.log("Hello Golfers, welcome to port 3100:");
