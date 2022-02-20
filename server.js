@@ -2,6 +2,9 @@ require("dotenv").config();
 const express = require("express");
 const app = express();
 const port = process.env.PORT || 3100;
+const cors = require("cors");
+
+app.use(cors());
 
 // Init middleware
 app.set("trust proxy", true);
