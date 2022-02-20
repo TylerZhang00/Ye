@@ -1,6 +1,7 @@
-var router = require("express").Router();
+const router = require("express").Router();
 
 router.get("/", function (req, res) {
+  console.log("Getting yardages:");
   const yardages = {
     sixtyDegree: [null, null],
     assistWedge: [80, 100],
@@ -17,6 +18,7 @@ router.get("/", function (req, res) {
     threeWood: [null, null],
     driver: [null, null],
   };
+  console.log("Obtained yardages:", yardages);
   return res.json({
     success: true,
     message: "Successfully obatained yardages.",
