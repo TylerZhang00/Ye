@@ -1,6 +1,6 @@
-const router = require("express").Router();
+import { UserYardages } from "../../models/models.js";
 
-router.get("/", function (req, res) {
+const getYardages = async (req, res) => {
   console.log("Getting yardages:");
   const yardages = [
     {
@@ -66,12 +66,19 @@ router.get("/", function (req, res) {
       yardages: [220, 220, 250],
     },
   ];
-  console.log("Obtained yardages:", yardages);
+
+  const userYardages = await UserYardages.findOne({
+    user: "yiqizhang@gmail.com",
+  });
+
+  console.log("DB Yardages:", userYardages);
+
+  // console.log("Obtained yardages:", yardages);
   return res.json({
     success: true,
     message: "Successfully obatained yardages.",
-    yardages,
+    userYardages,
   });
-});
+};
 
-module.exports = router;
+export default getYardages;

@@ -1,8 +1,14 @@
-require("dotenv").config();
-const express = require("express");
+import dotenv from "dotenv";
+dotenv.config();
+import express from "express";
+import cors from "cors";
 const app = express();
 const port = process.env.PORT || 3100;
-const cors = require("cors");
+
+import connectDB from "./config/db.js";
+import getYardages from "./routes/yardages/getYardages.js";
+
+connectDB(); // Connect Database
 
 app.use(cors());
 
@@ -12,7 +18,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json({ limit: "50mb" }));
 
 app.get("/", (req, res) => res.send("Hello Golfers!"));
-app.use("/yardages", require("./routes/yardages"));
+app.get("/yardages", getYardages);
 
 // Start the server on port 3000
 app.listen(process.env.PORT || 3100, () =>
