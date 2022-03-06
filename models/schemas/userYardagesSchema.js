@@ -6,7 +6,7 @@ const UserYardagesSchema = new Schema(
     user: {
       type: String,
       trim: true,
-      required: [true, "The customer email is required"],
+      required: [true, "User email is required"],
     },
     stockYardages: {
       type: Array,

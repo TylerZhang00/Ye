@@ -18,7 +18,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json({ limit: "50mb" }));
 
 app.get("/", (req, res) => res.send("Hello Golfers!"));
-app.get("/yardages", getYardages);
+app.get("/yardages/:user", getYardages);
 
 // Start the server on port 3000
 app.listen(process.env.PORT || 3100, () =>
