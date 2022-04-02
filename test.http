@@ -2,3 +2,16 @@ get https://naborly-golf-server.herokuapp.com/yardages
 
 ###
 get http://localhost:3100/yardages
+
+###
+post http://localhost:3100/yardages/postYardages
+content-type: application/json
+
+{
+   "user": "yiqizhang2@gmail.com",
+   "clubAdded":{
+    "club": "60 Degree",
+    "name": "Callaway Jaws Wedge 60",
+    "yardages": [101, 100, 100]        
+   }
+}
