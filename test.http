@@ -10,8 +10,7 @@ content-type: application/json
 {
    "user": "yiqizhang2@gmail.com",
    "clubAdded":{
-    "club": "60 Degree",
-    "name": "Callaway Jaws Wedge 60",
-    "yardages": [101, 100, 100]        
+    "club": "3 Hybrid Degree",     
+    "yardage": 88  
    }
 }

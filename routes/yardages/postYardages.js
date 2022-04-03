@@ -6,7 +6,6 @@ const postYardages = async (req, res) => {
 
   try {
     const existingUser = await UserYardages.findOne({ user: user });
-    const existingStockYardages = existingUser.stockYardages;
 
     if (!existingUser) {
       await UserYardages.create({
@@ -19,15 +18,18 @@ const postYardages = async (req, res) => {
       });
     } else {
       // Checks if club from request exists in user's yardages
-      const foundClubInBag = existingStockYardages.findIndex(
+      const foundClubInBag = existingUser.stockYardages.find(
         (club) => club.club === clubAdded.club
       );
 
-      if (foundClubInBag >= 0) {
+      if (foundClubInBag) {
         await UserYardages.updateOne(
           { _id: existingUser._id, "stockYardages.club": clubAdded.club },
           {
-            $set: { "stockYardages.$.yardages": clubAdded.yardages },
+            $set: {
+              "stockYardages.$.club": clubAdded.club,
+              "stockYardages.$.yardage": clubAdded.yardage,
+            },
           }
         );
         return res.json({
