@@ -14,3 +14,12 @@ content-type: application/json
     "yardage": 88  
    }
 }
+
+###
+delete http://localhost:3100/yardages/deleteYardages
+content-type: application/json
+
+{
+   "user": "yiqizhang@gmail.com",
+   "club": "9 Iron"         
+}

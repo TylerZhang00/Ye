@@ -8,6 +8,7 @@ const port = process.env.PORT || 3100;
 import connectDB from "./config/db.js";
 import getYardages from "./routes/yardages/getYardages.js";
 import postYardages from "./routes/yardages/postYardages.js";
+import deleteYardages from "./routes/yardages/deleteYardages.js";
 
 connectDB(); // Connect Database
 
@@ -21,6 +22,7 @@ app.use(express.json({ limit: "50mb" }));
 app.get("/", (req, res) => res.send("Hello Golfers!"));
 app.get("/yardages/:user", getYardages);
 app.post("/yardages/postYardages", postYardages);
+app.delete("/yardages/deleteYardages", deleteYardages);
 
 // Start the server on port 3000
 app.listen(process.env.PORT || 3100, () =>

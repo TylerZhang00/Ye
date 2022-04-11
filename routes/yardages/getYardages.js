@@ -8,8 +8,6 @@ const getYardages = async (req, res) => {
     user,
   });
 
-  // console.log("DB Yardages:", userYardages);
-
   return res.json({
     success: true,
     message: "Successfully obatained yardages.",
