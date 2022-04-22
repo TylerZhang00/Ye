@@ -23,3 +23,7 @@ content-type: application/json
    "user": "yiqizhang@gmail.com",
    "club": "9 Iron"         
 }
+
+
+###
+get http://localhost:3100/courses
