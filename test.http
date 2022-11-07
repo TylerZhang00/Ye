@@ -1,3 +1,23 @@
+###
+post http://localhost:3100/scores/postScores
+content-type: application/json
+
+{
+   "user": "yiqizhang@gmail.com",
+   "scores":{
+    "course": "Loch March Golf & Country Club",     
+    "date": "Oct 9, 2022",
+    "par": 72,
+    "player": "Yiqi Zhang",
+    "rating": 119,
+    "score": 97,    
+    "slope": 119,
+    "tees": "Blue",
+    "yardage": 6072
+   }
+}
+
+###
 get https://naborly-golf-server.herokuapp.com/yardages
 
 ###

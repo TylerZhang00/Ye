@@ -10,6 +10,7 @@ import getCourses from "./routes/courses/getCourses.js";
 import getYardages from "./routes/yardages/getYardages.js";
 import postYardages from "./routes/yardages/postYardages.js";
 import deleteYardages from "./routes/yardages/deleteYardages.js";
+import postScores from "./routes/scores/postScores.js";
 
 connectDB(); // Connect Database
 
@@ -25,6 +26,7 @@ app.get("/courses", getCourses);
 app.get("/yardages/:user", getYardages);
 app.post("/yardages/postYardages", postYardages);
 app.delete("/yardages/deleteYardages", deleteYardages);
+app.post("/scores/postScores", postScores);
 
 // Start the server on port 3000
 app.listen(process.env.PORT || 3100, () =>
