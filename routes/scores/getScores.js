@@ -7,7 +7,7 @@ const getScores = async (req, res) => {
 
   return res.json({
     success: true,
-    message: "Successfully obatained courses",
+    message: "Successfully obatained scores",
     scores,
   });
 };

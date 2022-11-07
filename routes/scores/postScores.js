@@ -20,7 +20,7 @@ const postScores = async (req, res) => {
 
     return res.json({
       success: true,
-      message: "Successfully added yardage",
+      message: "Successfully added score",
     });
   } catch (error) {
     console.log(`Something went wrong: ${error}`);

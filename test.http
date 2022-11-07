@@ -5,20 +5,42 @@ content-type: application/json
 {
    "user": "yiqizhang@gmail.com",
    "scores":{
-    "course": "Loch March Golf & Country Club",     
-    "date": "Oct 9, 2022",
+    "course": "Greyhawk Golf Course - Predator",     
+    "date": "Oct 1, 2022",
     "par": 72,
     "player": "Yiqi Zhang",
-    "rating": 119,
-    "score": 97,    
-    "slope": 119,
-    "tees": "Blue",
-    "yardage": 6072
+    "rating": 69.3,
+    "score": 90,    
+    "slope": 124,
+    "tees": "Blue/White",
+    "yardage": 6235
    }
 }
 
+
 ###
 get http://localhost:3100/scores/getScores?user=yiqizhang@gmail.com
+
+
+###
+delete http://localhost:3100/scores/deleteScores
+content-type: application/json
+
+{
+   "user": "yiqizhang@gmail.com",
+   "scores":{
+    "course": "Greyhawk Golf Course - Predator",     
+    "date": "Oct 1, 2022",
+    "par": 72,
+    "player": "Yiqi Zhang",
+    "rating": 69.3,
+    "score": 91,    
+    "slope": 124,
+    "tees": "Blue/White",
+    "yardage": 6235
+   }
+}
+
 
 ###
 get https://naborly-golf-server.herokuapp.com/yardages

@@ -7,11 +7,16 @@ const port = process.env.PORT || 3100;
 
 import connectDB from "./config/db.js";
 import getCourses from "./routes/courses/getCourses.js";
+
+// Scores
+import getScores from "./routes/scores/getScores.js";
+import postScores from "./routes/scores/postScores.js";
+import deleteScores from "./routes/scores/deleteScores.js";
+
+// Yardages
 import getYardages from "./routes/yardages/getYardages.js";
 import postYardages from "./routes/yardages/postYardages.js";
 import deleteYardages from "./routes/yardages/deleteYardages.js";
-import getScores from "./routes/scores/getScores.js";
-import postScores from "./routes/scores/postScores.js";
 
 connectDB(); // Connect Database
 
@@ -25,10 +30,15 @@ app.use(express.json({ limit: "50mb" }));
 app.get("/", (req, res) => res.send("Hello Golfers!"));
 app.get("/courses", getCourses);
 app.get("/yardages/:user", getYardages);
-app.post("/yardages/postYardages", postYardages);
-app.delete("/yardages/deleteYardages", deleteYardages);
+
+// Scores
 app.get("/scores/getScores", getScores);
 app.post("/scores/postScores", postScores);
+app.delete("/scores/deleteScores", deleteScores);
+
+// Yardages
+app.post("/yardages/postYardages", postYardages);
+app.delete("/yardages/deleteYardages", deleteYardages);
 
 // Start the server on port 3000
 app.listen(process.env.PORT || 3100, () =>
