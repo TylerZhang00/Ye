@@ -8,7 +8,7 @@ const GolfProductsSchema = new Schema(
       trim: true,
     },
     href: {
-      type: Number,
+      type: String,
       trim: true,
     },
     price: {
