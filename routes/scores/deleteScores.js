@@ -1,26 +1,20 @@
 import { UserScores } from "../../models/models.js";
 
 const deleteScores = async (req, res) => {
-  const scoreToDelete = req.body.scores;
-  console.log("Score:", scoreToDelete);
 
-  let payload = {
+  let payloadToDelete = {
     user: req.body.user,
-    course: scoreToDelete.course,
-    date: scoreToDelete.date,
-    par: scoreToDelete.par,
-    player: scoreToDelete.player,
-    score: scoreToDelete.score,
-    slope: scoreToDelete.slope,
-    tees: scoreToDelete.tees,
-    yardage: scoreToDelete.yardage,
+    course: req.body.scores.course,
+    date: req.body.scores.date,
+    par: req.body.scores.par,
+    player: req.body.scores.player,
+    score: req.body.scores.score,
+    slope: req.body.scores.slope,
+    tees: req.body.scores.tees,
+    yardage: req.body.scores.yardage,
   };
 
-  console.log("payload:", payload);
-
-  const x = await UserScores.deleteOne(payload);
-
-  console.log("x:", x);
+  await UserScores.deleteOne(payloadToDelete);
 
   return res.json({
     success: true,

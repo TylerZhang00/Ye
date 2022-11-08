@@ -43,6 +43,10 @@ content-type: application/json
 
 
 ###
+get http://localhost:3100/products/getProducts
+
+
+###
 get https://naborly-golf-server.herokuapp.com/yardages
 
 ###
