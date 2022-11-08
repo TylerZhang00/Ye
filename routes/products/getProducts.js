@@ -5,8 +5,6 @@ const getProducts = async (req, res) => {
 
   const products = await GolfProducts.find({});
 
-  console.log("products:", products);
-
   return res.json({
     success: true,
     message: "Successfully obatained products",
