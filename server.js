@@ -13,6 +13,9 @@ import getScores from "./routes/scores/getScores.js";
 import postScores from "./routes/scores/postScores.js";
 import deleteScores from "./routes/scores/deleteScores.js";
 
+// Products
+import getProducts from "./routes/products/getProducts.js";
+
 // Yardages
 import getYardages from "./routes/yardages/getYardages.js";
 import postYardages from "./routes/yardages/postYardages.js";
@@ -30,6 +33,9 @@ app.use(express.json({ limit: "50mb" }));
 app.get("/", (req, res) => res.send("Hello Golfers!"));
 app.get("/courses", getCourses);
 app.get("/yardages/:user", getYardages);
+
+// Products
+app.get("/products/getProducts", getProducts);
 
 // Scores
 app.get("/scores/getScores", getScores);
