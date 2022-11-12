@@ -6,6 +6,8 @@ const app = express();
 const port = process.env.PORT || 3100;
 
 import connectDB from "./config/db.js";
+
+// Courses
 import getCourses from "./routes/courses/getCourses.js";
 
 // Scores
@@ -15,6 +17,9 @@ import deleteScores from "./routes/scores/deleteScores.js";
 
 // Products
 import getProducts from "./routes/products/getProducts.js";
+
+// Videos
+import getTutorialVideos from "./routes/videos/getTutorialVideos.js";
 
 // Yardages
 import getYardages from "./routes/yardages/getYardages.js";
@@ -31,8 +36,9 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json({ limit: "50mb" }));
 
 app.get("/", (req, res) => res.send("Hello Golfers!"));
+
+// Courses
 app.get("/courses", getCourses);
-app.get("/yardages/:user", getYardages);
 
 // Products
 app.get("/products/getProducts", getProducts);
@@ -42,7 +48,11 @@ app.get("/scores/getScores", getScores);
 app.post("/scores/postScores", postScores);
 app.delete("/scores/deleteScores", deleteScores);
 
+// Videos
+app.get("/videos/getTutorialVideos", getTutorialVideos);
+
 // Yardages
+app.get("/yardages/:user", getYardages);
 app.post("/yardages/postYardages", postYardages);
 app.delete("/yardages/deleteYardages", deleteYardages);
 

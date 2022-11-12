@@ -76,3 +76,20 @@ content-type: application/json
 
 ###
 get http://localhost:3100/courses
+
+
+{
+"property": "Royal Woodbine Golf Club",
+"latitude": 43.6777088,
+"longitude": -79.585545,
+"city":"Toronto",
+"country":"Canada",
+"holes": 18,
+"public":true,
+"range":false,
+"rating":4.0
+}
+
+
+###
+get http://localhost:3100/videos/getTutorialVideos
